@@ -4,6 +4,7 @@ from ingestion import load_data, preprocess_data
 
 app = Flask(__name__)
 
+# Load and preprocess data
 df = preprocess_data(load_data('data/train.csv'))
 model, _ = train_model(df)
 
@@ -16,4 +17,3 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
